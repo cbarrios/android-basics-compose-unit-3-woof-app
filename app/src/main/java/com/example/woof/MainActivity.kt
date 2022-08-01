@@ -28,8 +28,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -52,14 +54,46 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun WoofTopAppBar(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .background(color = MaterialTheme.colors.primary)
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Image(
+            modifier = Modifier
+                .size(64.dp)
+                .padding(8.dp),
+            painter = painterResource(id = R.drawable.ic_woof_logo),
+            contentDescription = null
+        )
+        Text(
+            text = stringResource(id = R.string.app_name),
+            style = MaterialTheme.typography.h1
+        )
+    }
+}
+
 /**
  * Composable that displays an app bar and a list of dogs.
  */
 @Composable
 fun WoofApp() {
-    LazyColumn(modifier = Modifier.background(MaterialTheme.colors.background)) {
-        items(dogs) {
-            DogItem(dog = it)
+    Scaffold(
+        topBar = {
+            WoofTopAppBar()
+        }
+    ) { inner ->
+        LazyColumn(
+            modifier = Modifier
+                .padding(inner)
+                .background(MaterialTheme.colors.background)
+        ) {
+            items(dogs) {
+                DogItem(dog = it)
+            }
         }
     }
 }
