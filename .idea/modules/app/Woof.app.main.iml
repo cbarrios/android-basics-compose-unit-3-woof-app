@@ -24,6 +24,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/6d746f3e86bddc310e0d0967798cc44b/transformed/ui-tooling-data-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/86c0617283b9d96f16173ac1818025f4/transformed/material-ripple-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1d4217734dbca7ec95a7fc52f52703f0/transformed/foundation-1.2.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/e401a30865bcca3a92fd31a3a67d042d/transformed/material-icons-extended-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f15e44210294d0e7ce46c07266c06534/transformed/material-icons-core-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a42dcaef2ff9ba4548447747321633a2/transformed/animation-1.1.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ed778f278f1d643e912a39fa6eb6b20d/transformed/foundation-layout-1.2.0-api.jar</arg>
@@ -156,5 +157,6 @@
     <orderEntry type="library" name="Gradle: androidx.compose.foundation:foundation-layout:1.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.compose.material:material-icons-core:1.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.compose.material:material-ripple:1.2.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.compose.material:material-icons-extended:1.2.0@aar" level="project" />
   </component>
 </module>
