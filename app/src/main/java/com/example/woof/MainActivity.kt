@@ -20,6 +20,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
@@ -48,6 +49,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.woof.data.Dog
 import com.example.woof.data.dogs
+import com.example.woof.ui.theme.White
 import com.example.woof.ui.theme.WoofTheme
 
 class MainActivity : ComponentActivity() {
@@ -114,6 +116,9 @@ fun WoofApp() {
 @Composable
 fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
     var expanded by remember { mutableStateOf(false) }
+    val color by animateColorAsState(
+        targetValue = if (expanded) MaterialTheme.colors.primary else MaterialTheme.colors.surface
+    )
     Card(
         modifier = modifier.padding(8.dp),
         elevation = 4.dp
@@ -126,6 +131,7 @@ fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
                         stiffness = Spring.StiffnessLow
                     )
                 )
+                .background(color = color)
         ) {
             Row(
                 modifier = Modifier
